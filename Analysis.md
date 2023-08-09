@@ -1,6 +1,6 @@
 All info about the analysis for the paper
 
-start with 5 individuals
+start with 5 individuals https://www.internationalgenome.org/data-portal/population/BedouinHGDP
 
 produce gam / bam 
 
