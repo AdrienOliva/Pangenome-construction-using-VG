@@ -5,12 +5,10 @@
      - Then run `awk '{print "wget " $1}' file.tsv` to recover all the file needed for one individual.
   *Don't forget to add header to the job*.
 
-   OR
-   - Download the CRAM file (if unmapped reads are in the file) and transform it in fasta using: `IDKIDKIDK`
-
-  
-  
-produce gam / bam 
+2. Merge all the forward reads together and all the reverse reads together `cat *1.fastq.gz > concatenated_1.fastq.gz`
+3. Map it to the Pangenome
+   - Create GAM
+   - Create BAM 
 
 call using the same https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115999/
 
