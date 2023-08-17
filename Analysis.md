@@ -2,7 +2,8 @@
 
 1. Start with 5 individuals (from here https://www.internationalgenome.org/data-portal/population/BedouinHGDP)
    - Get all the reads from one individual by downloading the tsv file.
-     - Then run `awk '{print "wget " $1}' file.tsv` to recover all the file needed for one individual.
+   - Create the folder for each individual and add the corresponding tsv file.
+   - run the dl.sh script using the doloop.sh script.
   *Don't forget to add header to the job*.
 
 2. Merge all the forward reads together and all the reverse reads together `cat *1.fastq.gz > concatenated_1.fastq.gz`
