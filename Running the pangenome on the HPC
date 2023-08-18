@@ -1,1 +1,5 @@
+Issue with xg and gcsa.
+I rerun the xg on the pruned 
 
+newvg ids -j $(for i in $(seq 1 22); do echo pr${i}.vg; done)
+newvg index -x all.xg $(for i in $(seq 1 22); do echo pr${i}.vg; done)
