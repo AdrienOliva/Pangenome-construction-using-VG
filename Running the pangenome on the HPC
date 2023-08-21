@@ -6,3 +6,10 @@ vg prune -t 8 -k 45 -r p${SLURM_ARRAY_TASK_ID}.vg > pruned${SLURM_ARRAY_TASK_ID}
 vg ids -j $(for i in $(seq 1 22); do echo pr${i}.vg; done)
 vg index -x all.xg $(for i in $(seq 1 22); do echo pruned${i}.vg; done)
 vg index -t 8 --temp-dir temp -g wg.gcsa data/pruned{1..22}.vg -p -Z 32768 2>&1 
+
+
+vg map -x adrienwg.xg -g wg.gcsa -f ERR1423010_1.fastq > testtest.gam
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Attempted to get handle for node 5777068 not present in graph
+
+I tested all the vg with vg validate and they are all came back valid.
