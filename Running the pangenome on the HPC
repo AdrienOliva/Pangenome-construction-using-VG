@@ -1,6 +1,8 @@
 Issue with xg and gcsa. 
 I rerun the xg on the pruned 
 
-newvg ids -j $(for i in $(seq 1 22); do echo pr${i}.vg; done)
-newvg index -x all.xg $(for i in $(seq 1 22); do echo pr${i}.vg; done)
-
+vg construct -r ref.fa -v sub-chr11.vcf.gz > p11.vg
+vg prune -t 8 -k 45 -r p${SLURM_ARRAY_TASK_ID}.vg > pruned${SLURM_ARRAY_TASK_ID}.vg
+vg ids -j $(for i in $(seq 1 22); do echo pr${i}.vg; done)
+vg index -x all.xg $(for i in $(seq 1 22); do echo pruned${i}.vg; done)
+vg index -t 8 --temp-dir temp -g wg.gcsa data/pruned{1..22}.vg -p -Z 32768 2>&1 
