@@ -9,6 +9,9 @@
 2. Merge all the forward reads together and all the reverse reads together `cat *1.fastq.gz > concatenated_1.fastq.gz`
 3. Map it to the Pangenome
    - Create GAM
+     - For now I map each reads separatly as I have an error when mapping paired-end
+       `newvg map -x newxg.xg -g wg.gcsa -f HGDP00607/HGDP00607_2.fastq.gz > HGDP00607_2.gam`
+     - Concatenate GAM with `cat`
    - Create BAM 
 
 call using the same https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115999/
