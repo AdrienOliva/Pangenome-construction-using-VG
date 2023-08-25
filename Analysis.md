@@ -11,7 +11,7 @@
    - Create GAM
      - For now I map each reads separatly as I have an error when mapping paired-end
        `newvg map -x newxg.xg -g wg.gcsa -f HGDP00607/HGDP00607_2.fastq.gz > HGDP00607_2.gam`
-     - Concatenate GAM with `cat`
+     - Concatenate GAM with `cat *.gam > concat.gam`
    - Create BAM 
 
 call using the same https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115999/
