@@ -14,7 +14,7 @@
      - Concatenate GAM with `cat *.gam > concat.gam`
    - Create BAM with `vg surject -x newxg.xg -b concat.gam > concat.bam`
 4. Call variants
-   - Using GAM `/scratch3/oli087/foa003/newvg pack -x /scratch3/oli087/foa003/FINALGRAPH/newxg.xg -g /scratch3/oli087/foa003/Analysis/data/HGDP00607/concat.gam -Q 1  -o /scratch3/oli087/foa003/Analysis/data/HGDP00607/concat.gam.pack`
+   - Using GAM `newvg pack -x newxg.xg -g concat.gam -Q 1  -o concat.gam.pack`
    - Using BAM call using the same https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115999/
    
 
