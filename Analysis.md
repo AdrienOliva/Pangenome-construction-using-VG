@@ -13,11 +13,11 @@
        `newvg map -x newxg.xg -g wg.gcsa -f HGDP00607/HGDP00607_2.fastq.gz > HGDP00607_2.gam`
      - Concatenate GAM with `cat *.gam > concat.gam`
    - Create BAM with `vg surject -x newxg.xg -b concat.gam > concat.bam`
-
-call using the same https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115999/
+4. Call variants
+   - Using GAM `/scratch3/oli087/foa003/newvg pack -x /scratch3/oli087/foa003/FINALGRAPH/newxg.xg -g /scratch3/oli087/foa003/Analysis/data/HGDP00607/concat.gam -Q 1  -o /scratch3/oli087/foa003/Analysis/data/HGDP00607/concat.gam.pack`
+   - Using BAM call using the same https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115999/
+   
 
 Send the 5 * 2 vcfs
 
 Create the pipeline for the 40
-
-Redo it all
