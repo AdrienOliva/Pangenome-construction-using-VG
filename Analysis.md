@@ -26,6 +26,7 @@ WARNING:MISSING_TAG_NM  787584260
 WARNING:RECORD_MISSING_READ_GROUP       791377280
      - So I ran by doing `samtools addreplacerg -r '@RG\tID:samplename\tSM:samplename' concat.bam -o concat_readgroup.bam`
      - Then need to sort using `samtools sort concat_readgroup.bam > concat_readgroup_sorted.bam`
+     - Then index using `samtools index concat_readgroup_sorted.bam`
      - redo the haplotype and check
 
 
