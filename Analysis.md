@@ -11,7 +11,7 @@
 
 
 
-#All info about the analysis for the paper
+# All info about the analysis for the paper
 
 1. Start with 5 individuals (from here https://www.internationalgenome.org/data-portal/population/BedouinHGDP)
    - Get all the reads from one individual by downloading the tsv file.
