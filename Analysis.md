@@ -3,7 +3,8 @@
 2. Concat them by doing `zcat chr{1..22}.fna.gz chrX.fna.gz chrY.fna.gz | cat > concatenated_file.fna`
 3. Download the VCF with all individuals from HGDP here `ftp://ngs.sanger.ac.uk/production/hgdp/hgdp_wgs.20190516/hgdp_wgs*`
 4. Do the subset of variant in each VCF  ` bcftools view --force-samples -s HGDP01275,HGDP01282,HGDP01256,HGDP01263,HGDP01268,HGDP01270,HGDP01276,HGDP01257,HGDP01264,HGDP01272,HGDP01277,HGDP01258,HGDP01260,HGDP01265,HGDP01254,HGDP01259,HGDP01261,HGDP01266,HGDP01273,HGDP01280,HGDP01255,HGDP01262,HGDP01267,HGDP01279,HGDP01274 --regions chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY -i 'MAF > 0.01' hgdp_wgs.20190516.full.chr10.vcf.gz > bgzip > sub10.vcf.gz`
-5. Merge all the VCF together  `bcftools concat sub1.vcf.gz sub2.vcf.gz sub3.vcf.gz sub4.vcf.gz sub5.vcf.gz sub6.vcf.gz sub7.vcf.gz sub8.vcf.gz sub9.vcf.gz sub10.vcf.gz sub11.vcf.gz sub12.vcf.gz sub13.vcf.gz sub14.vcf.gz sub15.vcf.gz sub16.vcf.gz sub17.vcf.gz sub18.vcf.gz sub19.vcf.gz sub20.vcf.gz sub21.vcf.gz sub22.vcf.gz subX.vcf.gz subY.vcf.gz -Oz -o merged.vcf.gz`
+5. Merge all the VCF together  `bcftools concat sub1.vcf.gz sub2.vcf.gz sub3.vcf.gz sub4.vcf.gz sub5.vcf.gz sub6.vcf.gz sub7.vcf.gz sub8.vcf.gz sub9.vcf.gz sub10.vcf.gz sub11.vcf.gz sub12.vcf.gz sub13.vcf.gz sub14.vcf.gz sub15.vcf.gz sub16.vcf.gz sub17.vcf.gz sub18.vcf.gz sub19.vcf.gz sub20.vcf.gz sub21.vcf.gz sub22.vcf.gz -Oz -o merged.vcf.gz`
+   Here I don't use X and Y, as the HGDP inviduals with X and Y are different than for the autosomal chromosome so easier to not include.
 
 6. Then run one command to build the pangenome `vg autoindex --workflow map --prefix /path/to/output --ref-fasta reference.fasta --vcf variants.vcf.gz`
 
