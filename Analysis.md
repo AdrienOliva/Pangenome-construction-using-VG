@@ -32,6 +32,7 @@
      - `newvg pack -x newxg.xg -g concat.gam -Q 1  -o concat.gam.pack`
      - `newvg call newxg.xg -k concat.gam.pack > HGDP00607.vcf`
    - Using BAM call
+     - If not done before, create .dict index using `gatk-launch CreateSequenceDictionary -R ref.fasta`
      - Using HaplotypeCaller `gatk HaplotypeCaller --input concat.bam --output HGDP00607_bam.vcf --reference /datastore/oli087/data/reference/ref.fa`
      - I had an error when using `picard ValidateSamFile I=concat.bam MODE=SUMMARY`
 Error Type      Count
